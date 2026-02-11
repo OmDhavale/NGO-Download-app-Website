@@ -6,18 +6,18 @@ export const UserManualPage = () => {
   const manualSections = [
     {
       icon: <HelpCircle className="w-8 h-8" />,
-      title: 'Getting Started',
-      description: 'Learn the basics and set up your account',
+      title: 'NGO',
+      description: 'Learn the basiccs of managing your NGO account',
       content: [
         { subtitle: 'Create Account', link: '#create-account' },
-        { subtitle: 'Login & Security', link: '#login-security' },
-        { subtitle: 'Profile Setup', link: '#profile-setup' },
+        { subtitle: 'Add Events', link: '#add-events' },
+        { subtitle: 'Mark/View Attendance', link: '#mark-view-attendance' },
       ],
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: 'Managing Volunteers',
-      description: 'Handle volunteer registration and coordination',
+      title: 'College',
+      description: 'Learn the basiccs of managing your College account',
       content: [
         { subtitle: 'Register Volunteers', link: '#register-volunteers' },
         { subtitle: 'Assign Tasks', link: '#assign-tasks' },
@@ -26,12 +26,12 @@ export const UserManualPage = () => {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: 'Dashboard Features',
+      title: 'admin',
       description: 'Master the dashboard and analytics',
       content: [
-        { subtitle: 'View Statistics', link: '#view-statistics' },
-        { subtitle: 'Generate Reports', link: '#generate-reports' },
-        { subtitle: 'Real-time Updates', link: '#real-time-updates' },
+        { subtitle: 'add NGO', link: '#add-ngo' },
+        { subtitle: 'add college', link: '#add-college' },
+        { subtitle: 'register new admin', link: '#register-new-admin' },
       ],
     },
     {
