@@ -227,19 +227,41 @@ export const UserManualPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="track-attendance"
+              id="college-login"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                Track Attendance
+                College Login
               </h3>
               <p className="text-[rgb(var(--text-secondary))] mb-4">
-                The attendance feature helps you monitor volunteer participation:
+              Click on college button in dashboard
               </p>
               <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
-                <li>Check-in volunteers at events</li>
-                <li>View attendance history</li>
-                <li>Generate attendance reports</li>
-                <li>Track hours volunteered</li>
+                <li>a list of all previously added colleges will be displayed</li>
+                <li>The user must select their respective college from the list.</li>
+                <li>After selecting the college, the user must enter the password.</li>
+                <li>Upon successful authentication, the respective college will be logged in.</li>
+              </ul>
+            </motion.div>
+
+             <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
+              id="view events"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
+                View Events
+              </h3>
+              <p className="text-[rgb(var(--text-secondary))] mb-4">
+              Event Attendance Section
+              </p>
+              <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
+                <li>Displays the search bar and list of events conducted by the NGO.</li>
+                <li>Shows the list of students who attended each event.</li>
+                <li>ncludes a Download Report button to download the student attendance report in Excel format.</li>
+                <li>Upon successful authentication, the respective college will be logged in.</li>
               </ul>
             </motion.div>
 
@@ -250,19 +272,27 @@ export const UserManualPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
               className="glass p-6 rounded-xl border border-[rgba(var(--border-color),0.2)]"
-              id="view-statistics"
+              id="view-attendance"
             >
               <h3 className="text-2xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-                View Statistics
+                View Attendance
               </h3>
               <p className="text-[rgb(var(--text-secondary))] mb-4">
-                The Dashboard displays comprehensive statistics including:
+                1. Displays different student divisions such as:
+                <n>FY – 15</n>
+
+                <n>SY – 12</n>
+
+                <n>TY – 13</n>
+
+                <n>And other divisions accordingly.</n>
+
               </p>
               <ul className="list-disc list-inside text-[rgb(var(--text-secondary))] space-y-2">
-                <li>Total volunteers registered</li>
-                <li>Active volunteers this month</li>
-                <li>Total volunteer hours</li>
-                <li>Event completion rate</li>
+                <li>Provides an option to add a new class/division involved in NGO activities.</li>
+                <li>when a particular division/class is selectedThe list of students belonging to that division is displayed.</li>
+                <li>When clicking on a specific student’s name within a division:The events attended by that student will be displayed.</li>
+                <li>A button to Export Class Data or to export data of a specific class/division is provided as well.</li>
               </ul>
             </motion.div>
 
