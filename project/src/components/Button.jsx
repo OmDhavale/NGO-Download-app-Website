@@ -41,7 +41,7 @@ export const Button = ({
       {!disabled && (
         <>
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 rounded-2xl"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.15)] to-transparent opacity-0 rounded-2xl"
             initial={false}
             whileHover={{ opacity: 0.3, x: ['0%', '100%'] }}
             transition={{ duration: 0.6 }}
@@ -49,7 +49,7 @@ export const Button = ({
           <motion.div
             className="absolute inset-0 rounded-2xl opacity-0"
             initial={false}
-            whileHover={{ 
+            whileHover={{
               boxShadow: '0 0 30px rgba(251, 146, 60, 0.6), 0 0 60px rgba(244, 114, 182, 0.3)'
             }}
             transition={{ duration: 0.3 }}

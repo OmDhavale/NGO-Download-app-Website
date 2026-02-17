@@ -2,47 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ══════════════════════════════════════════════════════════
+   DESIGN TOKEN SYSTEM — Light Mode (Default)
+   DO NOT MODIFY these values. Dark mode overrides below.
+   ══════════════════════════════════════════════════════════ */
 :root {
+  /* — Accent palette — */
   --accent-color: 236, 201, 145;
   --accent-secondary: 225, 188, 152;
   --dark-blue: 225, 188, 152;
+
+  /* — Layout tokens — */
   --radius: 1rem;
   --shadow-depth: 0.5;
+
+  /* — Timing tokens — */
   --duration-fast: 150ms;
   --duration-medium: 300ms;
   --duration-slow: 600ms;
 
+  /* — Surface colors — */
   --bg-primary: 255, 255, 255;
   --bg-secondary: 254, 250, 246;
   --bg-tertiary: 253, 247, 241;
+
+  /* — Text colors — */
   --text-primary: 101, 82, 63;
   --text-secondary: 140, 110, 90;
   --text-tertiary: 180, 155, 135;
+
+  /* — Border & glass — */
   --border-color: 230, 210, 190;
   --glass-bg: 255, 255, 255;
   --glass-border: 235, 220, 200;
+
+  /* — Shadow — */
+  --shadow-color: 0, 0, 0;
+
+  /* — Body background gradient — */
+  --body-gradient-start: #fef5f1;
+  --body-gradient-end: #fffbf7;
 }
 
-[data-theme='dark'] {
-  --accent-color: 236, 201, 145;
-  --accent-secondary: 225, 188, 152;
-  --dark-blue: 225, 188, 152;
+/* ══════════════════════════════════════════════════════════
+   DARK MODE — Override Layer
+   Activates ONLY when html[data-theme="dark"]
+   ══════════════════════════════════════════════════════════ */
+html[data-theme="dark"] {
+  /* — Accent palette — blue/cyan/green — */
+  --accent-color: 37, 99, 235;       /* #2563EB */
+  --accent-secondary: 6, 182, 212;   /* #06B6D4 */
+  --dark-blue: 37, 99, 235;          /* #2563EB */
 
-  --bg-primary: 245, 240, 233;
-  --bg-secondary: 240, 235, 228;
-  --bg-tertiary: 235, 228, 220;
-  --text-primary: 101, 82, 63;
-  --text-secondary: 140, 110, 90;
-  --text-tertiary: 180, 155, 135;
-  --border-color: 220, 200, 180;
-  --glass-bg: 240, 235, 228;
-  --glass-border: 225, 210, 190;
+  /* — Surface colors — deep navy — */
+  --bg-primary: 11, 18, 32;          /* #0B1220 */
+  --bg-secondary: 15, 23, 42;        /* #0F172A */
+  --bg-tertiary: 17, 24, 39;         /* #111827 */
+
+  /* — Text colors — soft accessible grays — */
+  --text-primary: 229, 231, 235;     /* #E5E7EB */
+  --text-secondary: 156, 163, 175;   /* #9CA3AF */
+  --text-tertiary: 107, 114, 128;    /* #6B7280 */
+
+  /* — Border & glass — */
+  --border-color: 31, 41, 55;        /* #1F2937 */
+  --glass-bg: 17, 24, 39;            /* #111827 */
+  --glass-border: 31, 41, 55;        /* #1F2937 */
+
+  /* — Shadow — */
+  --shadow-color: 0, 0, 0;
+
+  /* — Body background gradient — */
+  --body-gradient-start: #0B1220;
+  --body-gradient-end: #111827;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* ══════════════════════════════════════════════════════════
+   BASE BODY
+   ══════════════════════════════════════════════════════════ */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -52,12 +93,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(var(--bg-primary));
   color: rgb(var(--text-primary));
-  transition: background-color var(--duration-medium) ease, color var(--duration-medium) ease;
+  transition:
+    background-color var(--duration-medium) ease,
+    color var(--duration-medium) ease;
 }
-/* ✨ PASTEL ANIMATED BACKGROUND ✨ */
+
+/* ✨ PASTEL ANIMATED BACKGROUND — light mode */
 body {
-  background: radial-gradient(circle at 20% 30%, #fef5f1, #fffbf7 70%);
+  background: radial-gradient(circle at 20% 30%, var(--body-gradient-start), var(--body-gradient-end) 70%);
   animation: pastelGlow 18s infinite alternate ease-in-out;
+}
+
+/* Dark mode: disable hue-rotate glow, use static dark gradient */
+html[data-theme="dark"] body {
+  background: linear-gradient(135deg, #0B1220 0%, #0F172A 50%, #111827 100%);
+  animation: none;
 }
 
 @keyframes pastelGlow {
@@ -75,13 +125,23 @@ body {
   }
 }
 
+/* ══════════════════════════════════════════════════════════
+   GLASS UTILITY
+   ══════════════════════════════════════════════════════════ */
 .glass {
   background: rgba(var(--glass-bg), 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(var(--glass-border), 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(var(--shadow-color), 0.1);
+  transition:
+    background-color var(--duration-medium) ease,
+    border-color var(--duration-medium) ease,
+    box-shadow var(--duration-medium) ease;
 }
 
+/* ══════════════════════════════════════════════════════════
+   GLOW EFFECTS
+   ══════════════════════════════════════════════════════════ */
 .glow {
   box-shadow: 0 0 20px rgba(var(--accent-color), 0.3),
               0 0 40px rgba(var(--accent-color), 0.1);
@@ -93,6 +153,9 @@ body {
               0 0 90px rgba(var(--accent-color), 0.1);
 }
 
+/* ══════════════════════════════════════════════════════════
+   SKELETON LOADER
+   ══════════════════════════════════════════════════════════ */
 .skeleton {
   background: linear-gradient(
     90deg,
@@ -113,13 +176,25 @@ body {
   }
 }
 
+/* ══════════════════════════════════════════════════════════
+   FOCUS RING
+   ══════════════════════════════════════════════════════════ */
 .focus-glow:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px rgba(var(--accent-color), 0.5);
 }
+
+/* ══════════════════════════════════════════════════════════
+   HERO PHONE
+   ══════════════════════════════════════════════════════════ */
 .hero-phone {
   transition: transform 0.25s ease-out;
 }
+
+/* ══════════════════════════════════════════════════════════
+   HERO BUTTONS
+   ══════════════════════════════════════════════════════════ */
+
 /* ✨ Premium Hero Buttons */
 .btn-hero-primary {
   background: linear-gradient(135deg,#ec9122e1,#e4b313);
@@ -131,6 +206,15 @@ body {
 .btn-hero-primary:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 22px 55px rgba(0, 211, 255, 0.7);
+}
+
+html[data-theme="dark"] .btn-hero-primary {
+  background: linear-gradient(135deg, #2563EB, #22C55E);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4);
+}
+
+html[data-theme="dark"] .btn-hero-primary:hover {
+  box-shadow: 0 22px 55px rgba(37, 99, 235, 0.6);
 }
 
 .btn-hero-secondary {
@@ -147,19 +231,33 @@ body {
   box-shadow: 0 18px 40px rgba(13, 148, 136, 0.7);
 }
 
-/* Store badges — subtle lift */
+html[data-theme="dark"] .btn-hero-secondary {
+  background: linear-gradient(135deg, #1F2937, #374151);
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.5);
+}
+
+html[data-theme="dark"] .btn-hero-secondary:hover {
+  background: linear-gradient(135deg, #374151, #4B5563);
+  box-shadow: 0 18px 40px rgba(55, 65, 81, 0.6);
+}
+
+/* ══════════════════════════════════════════════════════════
+   STORE BADGES
+   ══════════════════════════════════════════════════════════ */
 .btn-store {
   border-radius: 0.9rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 25px rgba(var(--shadow-color), 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-store:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  box-shadow: 0 18px 40px rgba(var(--shadow-color), 0.55);
 }
 
-/* ✨ Premium Holographic Buttons */
+/* ══════════════════════════════════════════════════════════
+   HOLOGRAPHIC BUTTONS
+   ══════════════════════════════════════════════════════════ */
 .btn-holo {
   background: linear-gradient(135deg,#00e7ff,#0077ff);
   box-shadow: 0 0 25px rgba(0,212,255,.5);
@@ -173,4 +271,23 @@ body {
 .btn-holo:active {
   transform: translateY(0) scale(0.95);
   box-shadow: 0 0 15px rgba(0,212,255,.3);
+}
+
+/* ══════════════════════════════════════════════════════════
+   GLOBAL THEME TRANSITIONS
+   Smooth transition for all themed elements
+   ══════════════════════════════════════════════════════════ */
+.glass,
+input,
+button,
+a,
+nav,
+footer,
+section,
+h1, h2, h3, h4, h5, h6,
+p, span, li {
+  transition:
+    background-color var(--duration-medium) ease,
+    color var(--duration-medium) ease,
+    border-color var(--duration-medium) ease;
 }

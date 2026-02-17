@@ -106,7 +106,7 @@ export const Navbar = ({ currentPage, onNavigate }) => {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
-          className="md:hidden fixed top-14 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-[rgba(var(--border-color),0.3)] shadow-lg pointer-events-auto"
+          className="md:hidden fixed top-14 left-0 right-0 z-40 bg-[rgba(var(--glass-bg),0.95)] backdrop-blur-sm border-t border-[rgba(var(--border-color),0.3)] shadow-lg pointer-events-auto"
         >
           <div className="px-4 py-4 space-y-2 max-h-[60vh] overflow-auto">
             {navItems.map((item) => (
