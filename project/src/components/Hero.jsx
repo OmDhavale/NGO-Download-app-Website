@@ -1,4 +1,4 @@
-   import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Download, ArrowRight, Play, Apple } from 'lucide-react';
 import { Button } from './Button';
 
@@ -24,17 +24,17 @@ export const Hero = () => {
         >
           {/* Left glow - scales on mobile */}
           <div className="absolute -left-12 sm:-left-24 top-8 sm:top-16 w-48 sm:w-96 h-48 sm:h-96 bg-blue-500/40 rounded-full blur-3xl" />
-          
+
           {/* Right glow - hidden on mobile, shown on tablet+ */}
           <div className="hidden sm:block absolute right-0 top-12 sm:top-24 w-64 sm:w-[420px] h-64 sm:h-[420px] bg-cyan-500/35 rounded-full blur-3xl" />
-          
+
           {/* Center gradient - responsive positioning */}
           <div className="absolute left-1/4 sm:left-1/3 bottom-[-100px] sm:bottom-[-180px] w-80 sm:w-[520px] h-80 sm:h-[520px] bg-gradient-to-r from-blue-400/30 to-cyan-400/30 rounded-full blur-3xl" />
         </motion.div>
 
         {/* Main container - responsive grid layout */}
         <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-          
+
           {/* Left Content Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -61,7 +61,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <span className="block">NGO Smart Attendance App</span>
+              <span className="block">MarkIn Attendance App</span>
             </motion.h1>
 
             {/* Description - responsive paragraph */}
@@ -71,7 +71,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              Join our mission to create positive change. Connect with volunteers, track impact, and build a better tomorrow with our innovative mobile platform.
+              A modern mobile application designed to bridge the gap between Students, NGOs, and Colleges for seamless event attendance tracking!
             </motion.p>
 
             {/* Primary Buttons - stack vertically on mobile */}
@@ -85,7 +85,7 @@ export const Hero = () => {
                 variant="primary"
                 size="lg"
                 icon={<Download className="w-4 sm:w-5 h-4 sm:h-5" />}
-                onClick={() => {window.location.href = "/ngo-attendance.apk";}}
+                onClick={() => { window.location.href = "/ngo-attendance.apk"; }}
                 aria-label="Download app from Google Play Store"
                 className="btn-hero-primary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 flex-1 sm:flex-none text-sm sm:text-base"
               >
@@ -95,6 +95,7 @@ export const Hero = () => {
               <Button
                 variant="secondary"
                 size="lg"
+                onClick={() => { window.location.href = "/user-manual"; }}
                 icon={<ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />}
                 className="btn-hero-secondary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 flex-1 sm:flex-none text-sm sm:text-base"
               >
@@ -110,7 +111,7 @@ export const Hero = () => {
               transition={{ delay: 0.7 }}
             >
               {/* Google Play Store */}
-              <motion.button
+              {/* <motion.button
                 onClick={() =>
                   window.open(
                     'https://play.google.com/store/apps/details?id=com.example.ngoapp',
@@ -131,10 +132,10 @@ export const Hero = () => {
                   </div>
                   <div className="text-xs sm:text-sm font-semibold">Google Play</div>
                 </div>
-              </motion.button>
+              </motion.button> */}
 
               {/* App Store */}
-              <motion.button
+              {/* <motion.button
                 onClick={() =>
                   window.open('https://apps.apple.com/app/id1234567890', '_blank')
                 }
@@ -152,7 +153,7 @@ export const Hero = () => {
                   </div>
                   <div className="text-xs sm:text-sm font-semibold">App Store</div>
                 </div>
-              </motion.button>
+              </motion.button> */}
             </motion.div>
 
             {/* Stats Section - responsive layout */}
@@ -163,24 +164,24 @@ export const Hero = () => {
               transition={{ delay: 0.8 }}
             >
               {/* Stat 1 */}
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <div className="text-2xl sm:text-3xl font-bold text-[rgb(var(--text-primary))]">50K+</div>
                 <div className="text-xs sm:text-sm text-[rgb(var(--text-tertiary))]">Active Volunteers</div>
               </div>
-              <div className="hidden sm:block w-px h-10 sm:h-12 bg-[rgb(var(--border-color))]" />
-              
+              <div className="hidden sm:block w-px h-10 sm:h-12 bg-[rgb(var(--border-color))]" /> */}
+
               {/* Stat 2 */}
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <div className="text-2xl sm:text-3xl font-bold text-[rgb(var(--text-primary))]">200+</div>
                 <div className="text-xs sm:text-sm text-[rgb(var(--text-tertiary))]">Projects Completed</div>
               </div>
-              <div className="hidden sm:block w-px h-10 sm:h-12 bg-[rgb(var(--border-color))]" />
-              
+              <div className="hidden sm:block w-px h-10 sm:h-12 bg-[rgb(var(--border-color))]" /> */}
+
               {/* Stat 3 */}
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <div className="text-2xl sm:text-3xl font-bold text-[rgb(var(--text-primary))]">30+</div>
                 <div className="text-xs sm:text-sm text-[rgb(var(--text-tertiary))]">Countries</div>
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
 
@@ -208,12 +209,12 @@ export const Hero = () => {
                 <div className="w-full h-full bg-white rounded-3xl overflow-hidden flex flex-col">
                   {/* Phone notch */}
                   <div className="h-6 bg-black rounded-b-2xl mx-auto w-32" />
-                  
+
                   {/* Content - Full Height Image */}
                   <div className="flex-1 w-full overflow-auto bg-white p-0 m-0">
-                    <img 
-                      src="/ngo-image.jpg" 
-                      alt="NGO Attendance App Interface" 
+                    <img
+                      src="/ngo-image.jpg"
+                      alt="NGO Attendance App Interface"
                       className="w-full h-auto object-contain"
                     />
                   </div>

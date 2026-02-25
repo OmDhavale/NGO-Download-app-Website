@@ -145,7 +145,8 @@ export const FeaturesPage = () => {
           className="glass px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-[rgba(var(--glass-bg),0.9)] transition-all focus-glow"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => window.open('https://play.google.com/store/apps/details?id=com.example.ngoapp', '_blank')}
+          // onClick={() => window.open('https://play.google.com/store/apps/details?id=com.example.ngoapp', '_blank')}
+          onClick={() => { window.location.href = "/ngo-attendance.apk"; }}
         >
           Download Now
         </motion.button>

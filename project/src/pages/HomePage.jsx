@@ -1,29 +1,33 @@
 import { motion } from 'framer-motion';
 import { Hero } from '../components/Hero';
 import { Card } from '../components/Card';
-import { Users, Target, Heart, Globe } from 'lucide-react';
+import { GraduationCap, HandHeart, School, ShieldCheck } from 'lucide-react';
 
 export const HomePage = () => {
   const features = [
     {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Connect Volunteers',
-      description: 'Build a community of passionate individuals ready to make a difference.',
+      icon: <GraduationCap className="w-8 h-8" />,
+      title: 'Students Panel',
+      description: 'Students can securely log in, browse upcoming NGO events, register with a single tap, and track their own attendance history.',
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Track Impact',
-      description: 'Measure and showcase the real-world impact of your initiatives.',
+      icon: <HandHeart className="w-8 h-8" />,
+      title: 'NGO Panel',
+      description: 'Organizers can easily manage their events and mark student attendance on the spot.',
+      gradient: 'from-rose-500 to-pink-500',
     },
     {
-      icon: <Heart className="w-8 h-8" />,
-      title: 'Spread Kindness',
-      description: 'Facilitate acts of kindness and create positive ripple effects.',
+      icon: <School className="w-8 h-8" />,
+      title: 'College Panel',
+      description: 'College administrators get full transparency into which events their students are attending, complete with date-range filters and clean, professional data tables.',
+      gradient: 'from-indigo-500 to-violet-500',
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Global Reach',
-      description: 'Connect with organizations and volunteers worldwide.',
+      icon: <ShieldCheck className="w-8 h-8" />,
+      title: 'Admin Panel',
+      description: 'Registers Colleges and NGOs on the app.',
+      gradient: 'from-amber-500 to-orange-500',
     },
   ];
 
@@ -41,7 +45,7 @@ export const HomePage = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[rgb(var(--text-primary))]">
-            Why Choose Us
+            Our Features
           </h2>
           <p className="text-xl text-[rgb(var(--text-secondary))] max-w-2xl mx-auto">
             Our platform brings together technology and compassion to create meaningful change
@@ -54,7 +58,7 @@ export const HomePage = () => {
             <Card key={index} delay={index * 0.1}>
               <div className="flex items-start gap-4">
                 <motion.div
-                  className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg"
+                  className={`p-3 rounded-xl bg-gradient-to-br ${feature.gradient} text-white shadow-lg`}
                   whileHover={{ rotate: [0, -10, 10, -10, 0] }}
                   transition={{ duration: 0.5 }}
                 >
@@ -76,7 +80,7 @@ export const HomePage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,11 +89,11 @@ export const HomePage = () => {
           className="bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl p-12 text-center text-white shadow-lg"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Ready to Make a Difference?
+            Ready to Monitor Attendance Seamlessly ?
           </h2>
 
           <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
-            Join thousands of volunteers and organizations making the world a better place.
+            Get started with our app whether you are a student, college, ngo !
           </p>
 
           <motion.button
@@ -100,7 +104,7 @@ export const HomePage = () => {
             Get Started Today
           </motion.button>
         </motion.div>
-      </section>
+      </section> */}
     </div>
   );
 };
