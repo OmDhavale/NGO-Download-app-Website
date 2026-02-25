@@ -27,7 +27,7 @@ export const Footer = () => {
               size="sm"
               icon={<Download className="w-4 h-4" />}
               // onClick={() => window.open('https://play.google.com/store/apps/details?id=com.example.ngoapp', '_blank')}
-              onClick={() => { window.location.href = "/ngo-attendance.apk"; }}
+              onClick={() => { window.location.href = "/MarkIn-Attendance-1.1.1.apk"; }}
               aria-label="Download app from Google Play Store"
             >
               Download App

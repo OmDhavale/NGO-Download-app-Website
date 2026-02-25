@@ -146,7 +146,7 @@ export const FeaturesPage = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           // onClick={() => window.open('https://play.google.com/store/apps/details?id=com.example.ngoapp', '_blank')}
-          onClick={() => { window.location.href = "/ngo-attendance.apk"; }}
+          onClick={() => { window.location.href = "/MarkIn-Attendance-1.1.1.apk"; }}
         >
           Download Now
         </motion.button>

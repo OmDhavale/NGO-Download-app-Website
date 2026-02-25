@@ -85,7 +85,7 @@ export const Hero = () => {
                 variant="primary"
                 size="lg"
                 icon={<Download className="w-4 sm:w-5 h-4 sm:h-5" />}
-                onClick={() => { window.location.href = "/ngo-attendance.apk"; }}
+                onClick={() => { window.location.href = "/MarkIn-Attendance-1.1.1.apk"; }}
                 aria-label="Download app from Google Play Store"
                 className="btn-hero-primary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 flex-1 sm:flex-none text-sm sm:text-base"
               >
