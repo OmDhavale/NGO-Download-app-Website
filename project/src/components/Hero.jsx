@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Download, ArrowRight, Play, Apple } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 
 export const Hero = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section
@@ -95,7 +97,7 @@ export const Hero = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => { window.location.href = "/user-manual"; }}
+                onClick={() => navigate('/user-manual')}
                 icon={<ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />}
                 className="btn-hero-secondary text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 flex-1 sm:flex-none text-sm sm:text-base"
               >
